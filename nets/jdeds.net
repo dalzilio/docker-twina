@@ -1,0 +1,13 @@
+net jdedstimed
+tr t0 [2,8] p0 -> p2 
+tr t1 [4,6] p1 -> p3 
+tr t2 : c ]0,2] p2 p3 -> p4 p6 
+tr t3 : d p4 -> p0 
+tr t4 : d p6 -> p1 
+tr t5 : d p8 -> p1 
+tr t6 : d p2 p3 -> p4 p5 
+tr t7 [0,0] p5 -> p7 
+tr t8 [1,2] p7 -> p1 
+tr t9 : f p5 -> p8 
+pl p0 (1)
+pl p1 (1)

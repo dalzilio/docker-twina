@@ -1,0 +1,15 @@
+net generation
+tr f1 : F1 p1_3 -> p2_3 
+tr f2 p2_3 -> p3_3 
+tr t1_1 p1_1 -> p1_2 
+tr t1_2 p1_2 -> p1_3 
+tr t1_3 p1_3 -> p1_4 
+tr t2_1 p2_1 -> p2_2 
+tr t2_2 p2_2 -> p2_3 
+tr t2_3 : TT2_3 [5,10] p2_3 -> p2_4 
+tr t3_1 p3_1 -> p3_2 
+tr t3_2 p3_2 -> p3_3 
+tr t3_3 : TT3_3 [5,10] p3_3 -> p3_4 
+tr te : TTe p1_4 p2_4 p3_4 -> p0 
+tr ts : TTs p0 -> p1_1 p2_1 p3_1 
+pl p0 (2)

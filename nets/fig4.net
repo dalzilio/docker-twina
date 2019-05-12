@@ -1,0 +1,6 @@
+net fig4
+tr f : f p0 -> p2 
+tr t1 : a [3,5] p2 -> p1 
+tr t2 : a [2,3] p1 -> p0 
+tr t3 : b [1,2] p0 -> p1 
+pl p1 (1)
