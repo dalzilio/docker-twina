@@ -1,3 +1,5 @@
 sut:
-  build: .
+  build:
+    context: .
+    dockerfile: DOCKERFILE
   command: run_tests.sh
