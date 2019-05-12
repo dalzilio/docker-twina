@@ -1,0 +1,8 @@
+net obs
+tr t0 : App p0 -> p0 
+tr t1 : App p0 -> p1 
+tr t2 : Up p0 -> p0 
+tr t3 : Up ]2,w[ p1 -> 
+tr t4 : Up p1 -> p0 
+tr t5 : App p1 -> p0 
+pl p0 (1)

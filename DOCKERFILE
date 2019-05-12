@@ -1,0 +1,26 @@
+# Use the ubuntu runtime as a parent image
+# FROM alpine
+# FROM frolvlad/alpine-bash
+# FROM frolvlad/alpine-glibc
+FROM ubuntu
+
+# Set the working directory to /root
+WORKDIR /root
+
+# Copy the current directory contents into the container at /roots
+COPY ./nets /root
+
+# Install binaries
+RUN wget \
+        --no-check-certificate -P ./bin https://projects.laas.fr/twina/docker/sift && \
+    wget \
+        --no-check-certificate -P ./bin https://projects.laas.fr/twina/docker/twina
+
+# Define environment variable
+ENV IPTPN "1"
+
+# Run commands when the container launches
+# RUN apk --no-cache add bc
+# RUN ls -al /bin/tedd
+# RUN dos2unix /bin/mine.sh
+# CMD [ "/bin/mine.sh" ]

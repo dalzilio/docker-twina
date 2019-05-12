@@ -1,0 +1,119 @@
+\documentclass[convert]{standalone}
+
+\usepackage{pgfplotstable}
+
+\begin{document}%%
+%%
+\setlength{\tabcolsep}{4pt}%
+%%
+\pgfplotstableset{
+  col sep=comma,
+  columns/model/.style={
+    string type,
+    column type=|l,
+    column name=\textsc{Model}},
+  columns/exp/.style={
+    string type,
+    column type=l|,
+    column name=\textsc{Exp.}},
+  columns/statel/.style={
+    numeric type,
+    fixed,
+    column type=|r|,
+    column name=\textsc{States}},
+  columns/timel/.style={
+    numeric type,
+    fixed,
+    precision=0,
+    column type=r|,
+    postproc cell content/.append code={
+      \pgfkeysalso{@cell content/.add={}{s}}%
+    },
+    column name=\textsc{Time}},
+  columns/transl/.style={
+    numeric type,
+    fixed,
+    column type=r|,
+    column name=\textsc{Trans.}},
+  columns/states/.style={
+    numeric type,
+    fixed,
+    column type=|r|,
+    column name=\textsc{States}},
+  columns/transs/.style={
+    numeric type,
+    fixed,
+    column type=r,
+    column name=\textsc{Trans.}},
+    columns/times/.style={
+    numeric type,
+    fixed,
+    precision=0,
+    column type=|r,
+    postproc cell content/.append code={
+      \pgfkeysalso{@cell content/.add={}{s}}%
+    },
+    column name=\textsc{Time}},
+  %% RATIO
+  create on use/ratio/.style={
+    create col/expr={(\thisrow{states}-\thisrow{statel})*100/\thisrow{statel}}
+  },
+  columns/ratio/.style={
+    column type=||r|,
+    precision=0,
+    postproc cell content/.append code={
+      \pgfkeysalso{@cell content/.add={}{\%}}%
+      % \ifnum1=\pgfplotstablepartno
+      % \pgfkeysalso{@cell content/.add={}{\%}}%
+      % \fi
+    },
+    fixed,
+    fixed zerofill,
+    column name=\textsc{Ratio}},
+  %% SPEEDUP
+  create on use/speedup/.style={
+    create col/expr={(\thisrow{times}/\thisrow{timel}}
+  },
+  columns/speedup/.style={
+    column type=c|,
+    precision=1,
+    postproc cell content/.append code={
+      \pgfkeysalso{@cell content/.add={$\times$\,}{}}%
+    },
+    fixed,
+    fixed zerofill,
+    column name=\textsc{Speed.}},
+  %% HEAD
+  every head row/.style={
+    before row={
+      \hline%\toprule
+      \multicolumn{2}{|c||}{} &
+      \multicolumn{3}{c||}{Twina (LSCG)} &
+      \multicolumn{3}{c||}{IPTPN/sift (SSCG)} &
+      \multicolumn{1}{c|}{} &
+      \multicolumn{1}{c|}{}\\ 
+      \cline{3-8}
+    }, 
+    after row={
+      \hline
+      %\midrule
+    }
+  },
+  %% LAST
+  every last row/.style={after row=\hline}, % \bottomrule
+  every nth row={3}{before row=\hline},
+}%
+%%
+\pgfplotstableread{data.csv}\loadedtable%
+%%
+\pgfplotstabletypeset[
+columns={model,exp,statel,transl,timel,states,transs,times,ratio,speedup},
+1000 sep={\,},
+]\loadedtable%
+%%
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

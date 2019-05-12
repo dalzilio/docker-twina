@@ -1,0 +1,8 @@
+net obs
+tr t0 : TTs p0 -> p0 
+tr t1 : TTs p0 -> p1 
+tr t2 : TTe p0 -> p0 
+tr t3 : TTe ]40,w[ p1 -> 
+tr t4 : TTe p1 -> p0 
+tr t5 : TTs p1 -> p0 
+pl p0 (1)

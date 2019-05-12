@@ -1,0 +1,18 @@
+p 100.0 165.0 p0 0 s
+p 100.0 50.0 p1 1 n
+t 150.0 165.0 f c 0 w n f ne
+t 100.0 110.0 t2 c 2 3 e a w
+p 205.0 165.0 p2 0 s
+t 205.0 50.0 t1 c 3 5 n a e
+t 25.0 165.0 t3 c 1 2 s b n
+e p1 t2 1 n
+e t2 p0 1 n
+e p0 t3 1 n
+e t3 p1 1 n
+e p0 f 1 n
+e f p2 1 n
+e p2 t1 1 n
+e t1 p1 1 n
+h fig4
+
+
