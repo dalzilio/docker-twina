@@ -15,7 +15,7 @@ RUN apt-get update && \
         --no-check-certificate -P /bin https://projects.laas.fr/twina/docker/sift && \
     wget \
         --no-check-certificate -P /bin https://projects.laas.fr/twina/docker/twina && \
-    chmod a+x /bin/sift /bin/twina
+    chmod a+x /bin/sift /bin/twina ./benchmark.sh twinaluate.sh
 
 # Define environment variable
 ENV IPTPN "1"
