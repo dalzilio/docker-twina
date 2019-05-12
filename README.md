@@ -15,6 +15,8 @@ This image also contains script files and models that can be used to [reproduce
 results](https://projects.laas.fr/twina/post/reproducibility/) from our
 benchmarks.
 
+The download size of this image is: [![](https://images.microbadger.com/badges/image/dalzilio/twina.svg)](https://microbadger.com/images/dalzilio/twina "Get your own image badge on microbadger.com")
+
 Usage Example
 -------------
 
