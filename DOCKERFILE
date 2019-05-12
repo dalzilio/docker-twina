@@ -1,7 +1,4 @@
 # Use the ubuntu runtime as a parent image
-# FROM alpine
-# FROM frolvlad/alpine-bash
-# FROM frolvlad/alpine-glibc
 FROM ubuntu
 
 # Set the working directory to /root
@@ -18,9 +15,3 @@ RUN wget \
 
 # Define environment variable
 ENV IPTPN "1"
-
-# Run commands when the container launches
-# RUN apk --no-cache add bc
-# RUN ls -al /bin/tedd
-# RUN dos2unix /bin/mine.sh
-# CMD [ "/bin/mine.sh" ]

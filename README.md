@@ -21,7 +21,7 @@ Usage Example
 This image is intended to be used for testing Twina; you can find instructions
 on how to install the tool [here](https://projects.laas.fr/twina/#download). To
 reproduce the results in our paper on example ``jdeds.net`` you can simply run
-the following command: 
+the following command:
 
 ```sh
 docker run  dalzilio/twina:version0.6 './twinaluate.sh' jdeds f
