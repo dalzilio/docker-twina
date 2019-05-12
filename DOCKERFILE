@@ -8,10 +8,14 @@ WORKDIR /root
 COPY ./nets /root
 
 # Install binaries
-RUN wget \
-        --no-check-certificate -P ./bin https://projects.laas.fr/twina/docker/sift && \
+RUN apt-get update && \ 
+    apt-get install -y wget && \
+    rm -rf /var/lib/apt/lists/* && \
     wget \
-        --no-check-certificate -P ./bin https://projects.laas.fr/twina/docker/twina
+        --no-check-certificate -P /bin https://projects.laas.fr/twina/docker/sift && \
+    wget \
+        --no-check-certificate -P /bin https://projects.laas.fr/twina/docker/twina && \
+    chmod u+x /bin/sift /bin/twina
 
 # Define environment variable
 ENV IPTPN "1"
