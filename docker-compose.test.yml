@@ -4,4 +4,4 @@ services:
     build:
       context: .
       dockerfile: DOCKERFILE
-    command: run_tests.sh
+    command: run_test.sh
