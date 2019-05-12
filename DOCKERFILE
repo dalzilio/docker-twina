@@ -6,6 +6,7 @@ WORKDIR /root
 
 # Copy the current directory contents into the container at /roots
 COPY ./nets /root
+COPY ./run_test.sh /bin
 
 # Install binaries
 RUN apt-get update && \ 
@@ -15,7 +16,7 @@ RUN apt-get update && \
         --no-check-certificate -P /bin https://projects.laas.fr/twina/docker/sift && \
     wget \
         --no-check-certificate -P /bin https://projects.laas.fr/twina/docker/twina && \
-    chmod a+x /bin/sift /bin/twina ./benchmark.sh twinaluate.sh
+    chmod a+x /bin/sift /bin/twina /bin/run_test.sh ./benchmark.sh ./twinaluate.sh
 
 # Define environment variable
 ENV IPTPN "1"
