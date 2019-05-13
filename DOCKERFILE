@@ -13,9 +13,9 @@ RUN apt-get update && \
     apt-get install -y wget && \
     rm -rf /var/lib/apt/lists/* && \
     wget \
-        --no-check-certificate -P /bin https://projects.laas.fr/twina/docker/sift && \
+        --no-check-certificate -P /bin https://projects.laas.fr/twina/files/sift/sift && \
     wget \
-        --no-check-certificate -P /bin https://projects.laas.fr/twina/docker/twina && \
+        --no-check-certificate -P /bin https://projects.laas.fr/twina/files/linux/twina && \
     chmod a+x /bin/sift /bin/twina /bin/run_test.sh ./benchmark.sh ./twinaluate.sh
 
 # Define environment variable

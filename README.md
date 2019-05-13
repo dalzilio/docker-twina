@@ -15,7 +15,9 @@ This image also contains script files and models that can be used to [reproduce
 results](https://projects.laas.fr/twina/post/reproducibility/) from our
 benchmarks.
 
-The download size of this image is: [![](https://images.microbadger.com/badges/image/dalzilio/twina.svg)](https://microbadger.com/images/dalzilio/twina "Get your own image badge on microbadger.com")
+The download size of this image is:
+[![](https://images.microbadger.com/badges/image/vertics/twina.svg)](https://microbadger.com/images/vertics/twina
+"Get your own image badge on microbadger.com")
 
 Usage Example
 -------------
@@ -26,5 +28,5 @@ reproduce the results in our paper on example ``jdeds.net`` you can simply run
 the following command:
 
 ```sh
-docker run  dalzilio/twina:version0.6 './twinaluate.sh' jdeds f
+docker run  vertics/twina ./twinaluate.sh jdeds f
 ```
