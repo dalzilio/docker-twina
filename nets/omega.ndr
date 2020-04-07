@@ -1,0 +1,31 @@
+t 50.0 30.0 two c 0 w n F1 w
+p 50.0 160.0 p1 0 w
+t 120.0 160.0 back1 c 0 w n F2 n
+p 195.0 160.0 p0 1 e
+p 340.0 160.0 found 0 e
+t 340.0 30.0 three c 0 w n F1 e
+t 50.0 290.0 one c 0 w n F1 w
+p 195.0 30.0 p2 0 sw
+t 195.0 90.0 back2 c 0 w n F2 e
+t 340.0 290.0 t0 c 0 w n F1 e
+t 195.0 290.0 t1 c 0 w n F2 e
+t 195.0 230.0 back0 c 0 w n F2 e
+e t0 found 1 n
+e t1 found 1 n
+e found t1 1 n
+e back0 p0 1 n
+e p0 back0 1 n
+e found t0 1 n
+e three found 1 n
+e p2 three 1 n
+e back2 p0 1 n
+e p2 back2 1 n
+e two p2 1 n
+e p1 two 1 n
+e back1 p0 1 n
+e p1 back1 1 n
+e one p1 1 n
+e p0 one 1 n
+h omega
+
+

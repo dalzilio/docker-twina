@@ -1,0 +1,10 @@
+net omega
+tr back0 : F2 p0 -> p0 
+tr back1 : F2 p1 -> p0 
+tr back2 : F2 p2 -> p0 
+tr one : F1 p0 -> p1 
+tr two : F1 p1 -> p2 
+tr three : F1 p2 -> found 
+tr t0 : F1 found -> found 
+tr t1 : F2 found -> found 
+pl p0 (1)

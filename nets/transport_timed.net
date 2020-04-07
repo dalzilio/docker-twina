@@ -1,0 +1,22 @@
+net transport_timed
+tr t0 : PR1 [1,2] prod1 -> avail1 
+tr t1 [0,0] avail1 waitup -> push1 
+tr t10 [1,6] preq1 -> lreq1 up 
+tr t11 : ELR1 [0,0] lreq1 -> rreq1 
+tr t12 : ERR1 [3,3] rreq1 -> wait1 
+tr t13 : F2 [0,0] waitdown wait2 -> preq2 
+tr t14 [1,6] preq2 -> lreq2 up 
+tr t15 : ELR2 [0,0] lreq2 -> rreq2 
+tr t16 : ERR2 [3,3] rreq2 -> wait2 
+tr t2 [0,0] push1 -> down prod1 
+tr t3 : PR2 [1,2] prod2 -> avail2 
+tr t4 [0,0] avail2 waitup -> push2 
+tr t5 [0,0] push2 -> down prod2 
+tr t6 : U [1,6] up -> waitup 
+tr t7 : D [1,2] down -> waitdown 
+tr t9 : F1 [0,0] waitdown wait1 -> preq1 
+pl prod1 (1)
+pl prod2 (1)
+pl wait1 (1)
+pl wait2 (1)
+pl waitup (1)

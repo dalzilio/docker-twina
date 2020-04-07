@@ -1,0 +1,77 @@
+t 145.0 410.0 t9 c 0 0 ne F1 w
+p 145.0 470.0 preq1 0 e
+t 145.0 530.0 t10 1 6 e
+p 145.0 590.0 lreq1 0 e
+t 145.0 650.0 t11 c 0 0 e ELR1 w
+p 145.0 710.0 rreq1 0 e
+t 65.0 530.0 t12 c 3 3 w ERR1 s
+p 520.0 350.0 wait2 1 n
+t 520.0 410.0 t13 c 0 0 nw F2 e
+p 520.0 470.0 preq2 0 w
+t 520.0 530.0 t14 1 6 w
+p 520.0 590.0 lreq2 0 w
+t 520.0 650.0 t15 c 0 0 w ELR2 e
+p 520.0 710.0 rreq2 0 w
+t 600.0 530.0 t16 c 3 3 e ERR2 s
+p 325.0 410.0 waitdown 0 s
+t 325.0 350.0 t7 c 1 2 w D e
+p 325.0 290.0 down 0 n
+p 85.0 50.0 prod1 1 n
+t 145.0 50.0 t0 c 1 2 n PR1 e
+p 145.0 110.0 avail1 0 e
+t 145.0 170.0 t1 0 0 w
+p 145.0 230.0 push1 0 e
+p 325.0 210.0 up 0 w
+p 325.0 50.0 waitup 1 w
+t 500.0 50.0 t3 c 1 2 n PR2 w
+p 500.0 110.0 avail2 0 w
+t 500.0 170.0 t4 0 0 e
+p 500.0 230.0 push2 0 w
+p 145.0 350.0 wait1 1 n
+p 560.0 50.0 prod2 1 n
+t 85.0 290.0 t2 0 0 w
+t 560.0 290.0 t5 0 0 e
+t 325.0 130.0 t6 c 1 6 w U e
+e t14 up 1 n
+e t10 up 1 n
+e waitdown t13 1 n
+e waitdown t9 1 n
+e wait2 t13 1 n
+e t13 preq2 1 n
+e preq2 t14 1 n
+e t14 lreq2 1 n
+e lreq2 t15 1 n
+e t15 rreq2 1 n
+e rreq2 t16 1 n
+e t16 wait2 1 n
+e t12 wait1 1 n
+e rreq1 t12 1 n
+e t11 rreq1 1 n
+e lreq1 t11 1 n
+e t10 lreq1 1 n
+e preq1 t10 1 n
+e t9 preq1 1 n
+e wait1 t9 1 n
+e t7 waitdown 1 n
+e down t7 1 n
+e t6 waitup 1 n
+e up t6 1 n
+e prod2 t3 1 n
+e t3 avail2 1 n
+e avail2 t4 1 n
+e t4 push2 1 n
+e push2 t5 1 n
+e t5 prod2 1 n
+e waitup t4 1 n
+e t5 down 1 n
+e t2 down 1 n
+e waitup t1 1 n
+e t2 prod1 1 n
+e push1 t2 1 n
+e t1 push1 1 n
+e avail1 t1 1 n
+e t0 avail1 1 n
+e prod1 t0 1 n
+h transport_timed
+
+
