@@ -15,8 +15,14 @@ RUN apt-get update && \
     wget \
         --no-check-certificate -P /bin https://projects.laas.fr/twina/files/sift/sift && \
     wget \
+        --no-check-certificate -P /bin https://projects.laas.fr/twina/files/sift/ktzio && \
+    wget \
+        --no-check-certificate -P /bin https://projects.laas.fr/twina/files/sift/selt && \
+    wget \
+        --no-check-certificate -P /bin https://projects.laas.fr/twina/files/sift/ltl2ba && \
+    wget \
         --no-check-certificate -P /bin https://projects.laas.fr/twina/files/linux/twina && \
-    chmod a+x /bin/sift /bin/twina /bin/run_test.sh ./benchmark.sh ./twinaluate.sh
+    chmod a+x /bin/sift /bin/selt /bin/ktzio /bin/ltl2ba /bin/twina /bin/run_test.sh ./benchmark.sh ./twinaluate.sh
 
 # Define environment variable
 ENV IPTPN "1"
